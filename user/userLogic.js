@@ -17,7 +17,7 @@ const createToken = (user) => {
 const login = async (userData) => {
     const user = await userController.read({userName: userData.userName}, "+password")
     if(!user.length)throw{status: 400 , message : "user not found"}
-    console.log(user);
+    // console.log(user);
     if(user[0].password != userData.password)throw{status: 400 , message: "incorrect password"}
     return user
 }
